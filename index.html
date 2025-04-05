@@ -14,8 +14,9 @@
 <header>
     <nav class="navbar">
         <div class="nav-logo">
-            <img src="images/Nas map.png" alt="NIW2025 Logo">
+            <img src="images/NIWmainLOGO.gif" alt="NIW2025 Logo">
             <span>#NIW2025</span>
+
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -37,22 +38,25 @@
 </header>
 
      <!-- Hero Section -->
-     <section id="home" class="hero">
-        <div class="carousel"></div> 
+<section id="home" class="hero">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="images/backgroundHero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        <!-- Glassmorphism Overlay -->
-        <div class="hero-overlay">
-            <h1>#NIW2025</h1>
-            <p>Nasarawa Innovation Week: Empowering the future through innovation and technology.</p>
-            
-           
+    <!-- Image Overlay -->
+    <div class="hero-overlay">
+        <div class="hero-image-overlay">
+            <img src="images/NIWHEROPIC.png" alt="#NIW2025" />
 
-            <!-- Call-To-Action Buttons -->
-            <div class="hero-buttons">
-                <a href="#" class="register-button">Register Now</a>
-            </div>
+        <!-- Call-To-Action Buttons -->
+        <div class="hero-buttons">
+            <a href="#" class="register-button">Register Now</a>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Thrive Ultimatum Countdown Timer -->
 <section class="thrive-ultimatum">
@@ -82,7 +86,7 @@
 <section id="about" class="about">
     <div class="about-container">
         <div class="about-text">
-            <h2>About NIW2025</h2>
+            <h2>About</h2>
             <p>
                 Nasarawa Innovation Week (NIW) is a premier tech and innovation event designed to empower 
                 startups, entrepreneurs, and youth through cutting-edge technology, collaboration, and networking. 
@@ -97,7 +101,7 @@
             <a href="#register" class="cta-button">Join the Movement</a>
         </div>
         <div class="about-image">
-            <img src="images/Nas map.png" alt="NIW Event">
+            <img src="images/NIWLOGO.gif" alt="NIW Event">
         </div>
     </div>
 </section>
@@ -343,7 +347,14 @@
         </p>
 
         <div class="dev-team-grid">
-           
+            <div class="dev-card">
+                <img src="images/abubakarmohammedIT.png" alt="Lead Developer">
+                <div class="overlay">
+                    <h3>Abubakar Mohammed</h3>
+                    <p>Software Developer</p>
+                    <span>🚀 JavaScript | HTML | CSS</span>
+                </div>
+            </div>
             <div class="dev-card">
                 <img src="images/AISHATU JS.jpg" alt="Frontend Engineer">
                 <div class="overlay">
@@ -373,15 +384,6 @@
                 <div class="overlay">
                     <h3>Mira </h3>
                     <p>Product Manager</p>
-                </div>
-            </div>
-
-            <div class="dev-card">
-                <img src="images/abubakarmohammedIT.png" alt="Lead Developer">
-                <div class="overlay">
-                    <h3>Abubakar Mohammed</h3>
-                    <p>Software Developer</p>
-                    <span>🚀 JavaScript | HTML | CSS</span>
                 </div>
             </div>
 
@@ -448,39 +450,6 @@
                 <div class="faq-answer">
                     <p>💻 You can register for the **NIW2025 Hackathon** on our official website. Spots are limited, so be sure to sign up early!</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-   <!-- Contact Us Section -->
-   <section id="contact" class="contact">
-    <div class="contact-container">
-        <h2>📩 Contact Us</h2>
-        <p class="contact-intro">
-            🤖 Have questions? Reach out to us—we're here to help!
-        </p>
-
-        <div class="contact-content">
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h3>🚀 Send Us a Message</h3>
-                <form id="contact-form">
-                    <input type="text" name="name" placeholder="👤 Your Name" required>
-                    <input type="email" name="email" placeholder="✉️ Your Email" required>
-                    <textarea name="message" placeholder="💬 Your Message" rows="5" required></textarea>
-                    <button type="submit">🚀 Send Message</button>
-                </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h3>📍 Our Location</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Lafia, Nasarawa State, Nigeria</p>
-                <p><i class="fas fa-envelope"></i> info@niw2025.com</p>
-                <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
             </div>
         </div>
     </div>

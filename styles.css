@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px 25px;
     background: linear-gradient(135deg, rgba(5, 5, 50, 0.95), rgba(10, 10, 40, 0.85));
     color: white;
     position: fixed;
@@ -44,10 +44,10 @@ body {
 }
 
 .nav-logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    margin-left: 10px;
+    width: 120px;
+    height: 70px;
+    margin-right: 25px;
+    margin-left: 5px;
 }
 
 .nav-logo span {
@@ -64,7 +64,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    padding: 10px 6%;
+    padding: 5px 6%;
 }
 
 .nav-links li {
@@ -130,6 +130,7 @@ body {
     .burger {
         display: flex;
         padding: 30px 5%;
+        width: 80px;
     }
 
     /* Active Class for Mobile Menu */
@@ -157,62 +158,67 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden;
 }
 
-/* Background Image Carousel */
-.carousel {
+/* Video Background */
+.hero-video {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    animation: carousel 12s infinite linear;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
     filter: brightness(0.4);
 }
 
-@keyframes carousel {
-    0% { background-image: url('images/image1.jpg'); }
-    33% { background-image: url('images/image2.jpg'); }
-    66% { background-image: url('images/image3.jpg'); }
-    100% { background-image: url('images/image4.jpg'); }
-}
-
-/* Glassmorphism Overlay */
-.hero-overlay {
+/* Transparent Image Overlay */
+.hero-image-overlay {
     position: relative;
-    z-index: 10;
-    background: var(--glass-bg);
-    backdrop-filter: var(--blur-effect);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 212, 255, 0.2);
-    width: 80%;
-    max-width: 700px;
-    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    width: 100%;
+    padding: 20px;
 }
 
-.hero-overlay:hover {
-    transform: scale(1.02);
+/* Make the image responsive and large */
+.hero-image-overlay img {
+    width: 90vw;           /* Covers 90% of the viewport width */
+    max-width: 1200px;     /* Limit max size on big screens */
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+    
 }
 
-/* Hero Text */
-.hero-overlay h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 0px 0px 20px var(--glow-color);
+
+/* Call-To-Action Button */
+.hero-buttons .register-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #ff7f00;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(255, 127, 0, 0.4);
+    transition: background 0.3s;
 }
 
-.hero-overlay p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 0.8);
+.hero-buttons .register-button:hover {
+    background: #ff9900;
 }
+
 
 /* Countdown Timer */
 /* Fix main nav overlap */
@@ -293,25 +299,17 @@ body {
 }
 
 /* Responsive Tweaks */
-@media (max-width: 768px) {
-    .hero-overlay {
-        width: 90%;
-        padding: 30px;
+@media screen and (max-width: 768px) {
+    .hero-image-overlay img {
+        width: 105vw; /* Expand even more on smaller screens */
     }
 
-    .hero-overlay h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-overlay p {
+    .hero-buttons .register-button {
+        padding: 12px 24px;
         font-size: 1rem;
     }
-
-    .register-button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
 }
+
 
 
 
@@ -319,16 +317,16 @@ body {
 
 .about {
     padding: 100px 5%;
-    background: linear-gradient(135deg, rgba(0, 0, 50, 0.9), rgba(0, 0, 100, 0.8));
-    color: #fff;
-    text-align: center;
+    background: #fff;
+    color: #000000;
+    text-align: justify;
 }
 
 .about-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 50px;
+    gap: 90px;
     max-width: 1200px;
     margin: auto;
 }
@@ -349,10 +347,10 @@ body {
 }
 
 .about-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(255, 127, 0, 0.3);
+    width: 130%;
+    max-width: 600px;
+    /* border-radius: 15px; */
+    /* box-shadow: 0px 10px 30px rgba(255, 127, 0, 0.3); */
 }
 
 .cta-button {
@@ -378,7 +376,7 @@ body {
     }
 
     .about-image img {
-        max-width: 80%;
+        max-width: 100%;
     }
 }
 
@@ -390,8 +388,8 @@ body {
 
 .schedule {
     padding: 100px 5%;
-    background: linear-gradient(135deg, rgba(20, 20, 50, 0.9), rgba(0, 0, 80, 0.8));
-    color: #fff;
+    background: #fff;
+    color: #030303;
     text-align: center;
 }
 
@@ -416,7 +414,7 @@ body {
 
 .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -1212,10 +1210,11 @@ body {
 }
 
 .contact-form {
-    padding: 40px;
+    padding: 10px;
     border-radius: 50px;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+    align-items: center;
 }
 
 .contact-form h3,
@@ -1250,7 +1249,7 @@ body {
 }
 
 .contact-form button {
-    width: 100%;
+    width: 50%;
     padding: 12px;
     background: #0e01c0;
     color: #ececf3;
