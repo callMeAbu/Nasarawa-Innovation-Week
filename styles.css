@@ -298,16 +298,29 @@ body {
     transform: scale(1.1);
 }
 
+/* Default (Desktop) Image */
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Mobile Image Override */
+  @media (max-width: 768px) {
+    .hero-img {
+      content: url('images/niwheropicMobile.png');
+    }
+  }
+  
+
 /* Responsive Tweaks */
 @media screen and (max-width: 768px) {
-    .hero-image-overlay img {
-        width: 105vw; /* Expand even more on smaller screens */
-    }
 
     .hero-buttons .register-button {
         padding: 12px 24px;
         font-size: 1rem;
     }
+    
 }
 
 
