@@ -126,6 +126,7 @@ body {
         display: block;
         width: 100%;
     }
+    
 
     .burger {
         display: flex;
@@ -398,85 +399,162 @@ body {
 
 /* EVENT SCHEDULE STYLING */
 
+:root {
+    --primary-blue: #0066ff;
+    --dark-blue: #0044cc;
+    --light-blue: #e6f0ff;
+    --text-dark: #000000;
+    --text-light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 .schedule {
-    padding: 100px 5%;
-    background: #fff;
-    color: #030303;
-    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .schedule-container {
-    max-width: 1200px;
-    margin: auto;
+    text-align: center;
 }
 
-.schedule h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     background: linear-gradient(90deg, #ff7f00, #ffcc00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+    bottom: -10px;
+    left: 15%;
+    border-radius: 2px;
 }
 
 .schedule-intro {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 3rem;
 }
 
 .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .schedule-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(255, 127, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+    perspective: 1000px;
+    height: 200px;
+}
+
+.schedule-item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+    border-radius: 10px;
+}
+
+.schedule-item:hover .schedule-item-inner {
+    transform: rotateY(180deg);
+}
+
+.schedule-item-front, .schedule-item-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.schedule-item-front {
+    background-color: white;
+    border: 1px solid rgba(0, 102, 255, 0.1);
+}
+
+.schedule-item-back {
+    background-color: var(--primary-blue);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 1.5rem;
 }
 
 .schedule-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-.schedule-item p {
-    font-size: 1rem;
+.schedule-item-back p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
     line-height: 1.5;
 }
 
-.schedule-item:hover {
-    transform: scale(1.05);
+.schedule-item-back p strong {
+    color: white;
+    font-weight: 600;
 }
 
 .cta-button {
     display: inline-block;
-    margin-top: 60px;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    color: #fff;
-    background: linear-gradient(90deg, #ff7f00, #ffcc00);
+    padding: 1rem 2.5rem;
+    background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+    color: white;
     text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s ease-in-out;
-    
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 1rem;
 }
 
 .cta-button:hover {
-    background: linear-gradient(90deg, #ffcc00, #ff7f00);
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
 }
 
 @media (max-width: 768px) {
     .schedule-grid {
         grid-template-columns: 1fr;
     }
-}
 
+    h2 {
+        font-size: 2rem;
+    }
+}
 
 
 
