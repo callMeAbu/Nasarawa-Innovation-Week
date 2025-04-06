@@ -189,6 +189,7 @@ body {
     color: white;
     width: 100%;
     padding: 20px;
+    padding-top: 10%;
 }
 
 /* Make the image responsive and large */
@@ -196,7 +197,7 @@ body {
     width: 90vw;           /* Covers 90% of the viewport width */
     max-width: 1200px;     /* Limit max size on big screens */
     height: auto;
-    margin: 0 auto 20px;
+    margin: 0 auto 2px;
     display: block;
     
 }
@@ -205,7 +206,7 @@ body {
 /* Call-To-Action Button */
 .hero-buttons .register-button {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 2px;
     padding: 12px 28px;
     background: #ff7f00;
     color: #fff;
@@ -319,7 +320,7 @@ body {
 
     .hero-buttons .register-button {
         padding: 12px 24px;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     
 }
