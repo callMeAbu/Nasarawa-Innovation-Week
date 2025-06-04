@@ -445,6 +445,8 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .thrive-ultimatum h3 {
+    margin-top: -2rem;
+    margin-bottom: -1rem;
     font-size: 1.5rem;
   }
 
@@ -457,11 +459,13 @@ body {
   }
 
   .time-box {
+    margin-top: 2rem;
     flex: 0 0 auto;
     min-width: 65px;
     max-width: 80px;
     padding: 0.3rem 0.1rem;
     border-radius: 8px;
+    margin-bottom: 0.1rem;
   }
 
   .time-box span:first-child {
