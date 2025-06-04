@@ -2,64 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Nasarawa Innovation Week 2025</title>
+    <title>Nasarawa Innovation Week 2024</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- Main Navigation -->
-<header>
-    <nav class="navbar">
-        <div class="nav-logo">
-            <img src="images/NIWmainLOGO.gif" alt="NIW2025 Logo">
-            <span>#NIW2025</span>
+    <header class="niw-header">
+  <div class="container">
+    <a href="#" class="logo">
+      <img src="images/NIWmainLOGO.gif" alt="NIW Logo" />
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="navbar">
+        <div class="mobile-header">
+  <h3> #NIW 2025</h3>
+  <p>Innovate. Inspire. Impact.</p>
+</div>
 
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About NIW</a></li>
-            <li><a href="#schedule">Event Schedule</a></li>
-            <li><a href="#speakers">Speakers</a></li>
-            <li><a href="#hackathon">Hackathon</a></li>
-            <li><a href="#partners">Partners</a></li>
-            <li><a href="#community">Community</a></li>
-            <li><a href="#faq">FAQs</a></li>
-        </ul>
-        <div class="burger" onclick="toggleMenu()">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#register" class="register-btn">Register</a></li>
+      </ul>
     </nav>
+  </div>
 </header>
 
-     <!-- Hero Section -->
-<section id="home" class="hero">
-    <!-- Video Background -->
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="images/backgroundHero.mp4" type="video/mp4">
-        
-    </video>
 
-    <!-- Image Overlay -->
-    <div class="hero-overlay">
-        <div class="hero-image-overlay">
-          <img src="images/NIWHEROPIC.png" alt="#NIW2025" class="hero-img" />
-      
-          <!-- Call-To-Action Buttons -->
-          <div class="hero-buttons">
-            <a href="#" class="cta-button">Register Now</a>
-          </div>
-        </div>
+<!-- HERO SECTION -->
+
+   <section id="hero" class="hero-section">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="images/backgroundHero.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Overlay Content -->
+  <div class="hero-overlay">
+    <h1 class="hero-title">NASARAWA INNOVATION WEEK</h1>
+    <p class="hero-subtitle">
+      EMPOWERING THE FUTURE THROUGH <br />
+      INNOVATION AND TECHNOLOGY.
+    </p>
+
+    <!-- Partner Logos -->
+    <div class="partners">
+      <div class="partner">
+        <p>SUPPORTING PARTNER</p>
+        <img src="images/NORTHFOUNDERCOMMUNITY.png" alt="Northern Founders Community" />
       </div>
-      
+      <div class="partner">
+        <p>STRATEGIC PARTNER</p>
+        <img src="images/NASITDEALOGO.png" alt="NASITDEA" />
+      </div>
+      <div class="partner">
+        <p>ORGANIZED BY</p>
+        <img src="images/200.png" alt="02 Innovation Lab" />
+      </div>
+    </div>
+
+    <!-- Register Button -->
+    <a href="#" class="register-btn">REGISTER NOW</a>
+  </div>
 </section>
 
-
-    <!-- Thrive Ultimatum Countdown Timer -->
+<!-- Thrive Ultimatum Countdown Timer -->
 <section class="thrive-ultimatum">
     <h3>DAYS TO NASARAWA INNOVATION WEEK</h2>
     <div class="countdown">
@@ -83,7 +105,7 @@
 </section>
 
 
-   <!-- About NIW Section -->
+    <!-- About NIW Section -->
 <section id="about" class="about">
     <div class="about-container">
         <div class="about-text">
@@ -107,106 +129,117 @@
     </div>
 </section>
 
-    <!-- Event Schedule Section -->
-    <section id="schedule" class="schedule">
-        <div class="schedule-container">
-            <h2>Event Schedule</h2>
-            <p class="schedule-intro">Stay ahead of the curve with an exciting lineup of events designed to inspire, educate, and connect.</p>
-            
-            <div class="schedule-grid">
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 1: Opening Ceremony & Keynotes</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Join industry leaders as they set the stage for a groundbreaking week of innovation.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 2: Hackathon Kickoff & Tech Workshops</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Participants dive into a 24-hour hackathon, tackling real-world challenges with cutting-edge solutions.</p>
-                        </div>
-                    </div>
-                </div>
+<!-- Event Schedule Section -->
+   <section id="schedule" class="schedule">
+  <div class="schedule-container">
+    <h2>Event Schedule</h2>
+    <p class="schedule-intro">
+      Stay ahead of the curve with an exciting lineup of events designed to inspire, educate, and connect.
+    </p>
 
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 3: Panel Discussions & Startup Pitches</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Engage in insightful discussions with experts and witness the next big startups pitch their ideas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 4: Networking & Closing Ceremony</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Connect with like-minded innovators and celebrate the achievements of NIW2025.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 5: Advanced Workshops</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Deep dive into specialized topics with hands-on sessions led by industry experts.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 6: Innovation Showcase</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Experience the latest technological breakthroughs from leading companies and startups.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule-item">
-                    <div class="schedule-item-inner">
-                        <div class="schedule-item-front">
-                            <h3>Day 7: Future Trends Symposium</h3>
-                        </div>
-                        <div class="schedule-item-back">
-                            <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
-                            <p>Explore emerging technologies and their potential impact on various industries.</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="schedule-rows">
+      <!-- Row 1: Day 1 & 2 -->
+      <div class="schedule-row">
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 1: Opening Ceremony & Keynotes</h3>
             </div>
-
-            <a href="#register" class="cta-button">Join the Event</a>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>Join industry leaders as they set the stage for a groundbreaking week of innovation.</p>
+            </div>
+          </div>
         </div>
-    </section>
-  
-  
+
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 2: Hackathon Kickoff & Tech Workshops</h3>
+            </div>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>24-hour hackathon tackling real-world problems with smart tech.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Day 3, 4, 5 -->
+      <div class="schedule-row">
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 3: Panel Discussions & Startup Pitches</h3>
+            </div>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>Engage with experts and watch the next big startups pitch their ideas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 4: Networking & Closing Ceremony</h3>
+            </div>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>Celebrate innovations and connect with fellow change-makers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 5: Advanced Workshops</h3>
+            </div>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>Hands-on sessions led by top experts in various tech fields.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Day 6 & 7 -->
+      <div class="schedule-row">
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 6: Innovation Showcase</h3>
+            </div>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>Experience latest tech breakthroughs from top companies and startups.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-item-inner">
+            <div class="schedule-item-front">
+              <h3>Day 7: Future Trends Symposium</h3>
+            </div>
+            <div class="schedule-item-back">
+              <p><strong>Date:</strong> [Insert Date] | <strong>Venue:</strong> [Insert Venue]</p>
+              <p>Explore upcoming technologies and how they’ll transform industries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#register" class="cta-button">Join the Event</a>
+  </div>
+</section>
 
 
-    <!-- Speakers Section -->
+
+<!-- SPEAKERS SECTION -->
 <section id="speakers" class="speakers">
     <div class="speakers-container">
         <h2>Meet Our Speakers</h2>
@@ -261,44 +294,8 @@
     </div>
 </section>
 
-
-   <!-- Hackathon Section -->
-<section id="hackathon" class="hackathon">
-    <div class="hackathon-container">
-        <h2>Hackathon 2025</h2>
-        <p class="hackathon-intro">
-            Join the NIW2025 Hackathon—where brilliant minds collaborate to build groundbreaking solutions in AI, blockchain, fintech, and more!
-        </p>
-
-        <div class="hackathon-grid">
-            <div class="hackathon-info">
-                <h3>🚀 What to Expect</h3>
-                <ul>
-                    <li>💡 Solve real-world challenges with innovative tech solutions</li>
-                    <li>🛠 Work with industry mentors and experts</li>
-                    <li>🏆 Compete for amazing cash prizes, incubation, and funding</li>
-                    <li>🌍 Network with top developers, designers, and entrepreneurs</li>
-                </ul>
-            </div>
-
-            <div class="hackathon-details">
-                <h3>📅 Event Details</h3>
-                <p><strong>Date:</strong> [Insert Date]</p>
-                <p><strong>Venue:</strong> [Insert Venue]</p>
-                <p><strong>Categories:</strong> AI, Web3, Fintech, Healthcare, AgriTech, and more!</p>
-                <p><strong>Eligibility:</strong> Open to developers, designers, and innovators</p>
-            </div>
-        </div>
-
-        <div class="hackathon-cta">
-            <a href="#register" class="cta-button">Register Now</a>
-            <a href="#more-info" class="cta-secondary">Learn More</a>
-        </div>
-    </div>
-</section>
-
-   <!-- Partners & Sponsors Section -->
-<section id="partners" class="partners">
+    <!-- Partners & Sponsors Section -->
+<section id="sponsors" class="partners">
     <div class="partners-container">
         <h2>Our Partners & Sponsors</h2>
         <p class="partners-intro">
@@ -345,8 +342,10 @@
     </div>
 </section>
 
+    <!-- JOIN THE COMMUNITY SECTION -->
 
-   <!-- Community & Impact Section -->
+
+    <!-- Community & Impact Section -->
 <section id="community" class="community">
     <div class="community-container">
         <h2>Our Community & Impact</h2>
@@ -393,130 +392,87 @@
 </section>
 
 
-   <!-- Meet Our Mentors -->
-<section id="dev-team" class="dev-team">
-    <div class="dev-team-container">
-        <h2>Meet Our Mentors</h2>
-        <p class="dev-team-intro">
-            The guiding force behind NIW2025—experienced innovators and mentors empowering the next generation of tech leaders through hands-on guidance and visionary insights.
-        </p>
-
-        <div class="dev-team-grid">
-            <div class="dev-card">
-                <img src="images/abubakarmohammedIT.png" alt="Lead Developer">
-                <div class="overlay">
-                    <h3>Abubakar Mohammed</h3>
-                    <p>Software Developer</p>
-                </div>
-            </div>
-            <div class="dev-card">
-                <img src="images/AISHATU JS.jpg" alt="Frontend Engineer">
-                <div class="overlay">
-                    <h3>Aisha Abdullahi</h3>
-                    <p>Software Developer</p>
-                </div>
-            </div>
-            <div class="dev-card">
-                <img src="images/AISHA DESIGN.jpg" alt="Backend Engineer">
-                <div class="overlay">
-                    <h3>Aisha Opeyemi</h3>
-                    <p>Graphics Design</p>
-                </div>
-            </div>
-            <div class="dev-card">
-                <img src="images/HABEEBA PRODUCT.jpg" alt="Cybersecurity Expert">
-                <div class="overlay">
-                    <h3>Habiba </h3>
-                    <p>Product Manager</p>
-                </div>
-            </div>
-
-            <div class="dev-card">
-                <img src="images/MIRA FOODS PRODUCT.jpg" alt="Cybersecurity Expert">
-                <div class="overlay">
-                    <h3>Mira </h3>
-                    <p>Product Manager</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="dev-cta">
-            <p>Want to connect with our Mentors?</p>
-            <a href="#" class="cta-button">Join Us</a>
-        </div>
-    </div>
-</section>
-
-
-
    <!-- FAQs Section -->
 <section id="faq" class="faq">
-    <div class="faq-container">
-        <h2>❓ Frequently Asked Questions</h2>
-        <p class="faq-intro">
-            🤔 Got questions about NIW2025? Here are some frequently asked questions to help you out.
-        </p>
+  <div class="faq-container">
+    <h2>❓ Frequently Asked Questions</h2>
+    <p class="faq-intro">
+      🤔 Got questions about NIW2025? Here are some frequently asked questions to help you out.
+    </p>
 
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question">
-                    <i class="fas fa-lightbulb"></i> What is NIW2025? <span class="toggle-icon">➕</span>
-                </button>
-                <div class="faq-answer">
-                    <p>🚀 NIW2025 (Nasarawa Innovation Week) is a premier event that brings together tech enthusiasts, entrepreneurs, and industry leaders to showcase innovation, discuss emerging trends, and drive technological advancement.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <i class="fas fa-calendar-alt"></i> When and where will NIW2025 take place? <span class="toggle-icon">➕</span>
-                </button>
-                <div class="faq-answer">
-                    <p>📅 NIW2025 will be held in **Lafia, Nasarawa State**, from **[Insert Date]**. Stay tuned for venue details!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <i class="fas fa-users"></i> Who can attend NIW2025? <span class="toggle-icon">➕</span>
-                </button>
-                <div class="faq-answer">
-                    <p>👩‍💻👨‍💻 Anyone passionate about technology, innovation, and entrepreneurship can attend! Whether you're a student, startup founder, developer, or investor, there's something for you.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <i class="fas fa-ticket-alt"></i> Is NIW2025 free to attend? <span class="toggle-icon">➕</span>
-                </button>
-                <div class="faq-answer">
-                    <p>🎟️ Some sessions and workshops are **free**, while premium events may require registration or tickets. Stay updated on our website.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <i class="fas fa-laptop-code"></i> How can I participate in the hackathon? <span class="toggle-icon">➕</span>
-                </button>
-                <div class="faq-answer">
-                    <p>💻 You can register for the **NIW2025 Hackathon** on our official website. Spots are limited, so be sure to sign up early!</p>
-                </div>
-            </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fas fa-lightbulb"></i> What is NIW2025?
+          <span class="toggle-icon">➕</span>
+        </button>
+        <div class="faq-answer">
+          <p>🚀 NIW2025 (Nasarawa Innovation Week) is a premier event that brings together tech enthusiasts, entrepreneurs, and industry leaders to showcase innovation, discuss emerging trends, and drive technological advancement.</p>
         </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fas fa-calendar-alt"></i> When and where will NIW2025 take place?
+          <span class="toggle-icon">➕</span>
+        </button>
+        <div class="faq-answer">
+          <p>📅 NIW2025 will be held in <strong>Lafia, Nasarawa State</strong>, from <strong>[Insert Date]</strong>. Stay tuned for venue details!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fas fa-users"></i> Who can attend NIW2025?
+          <span class="toggle-icon">➕</span>
+        </button>
+        <div class="faq-answer">
+          <p>👩‍💻👨‍💻 Anyone passionate about technology, innovation, and entrepreneurship can attend! Whether you're a student, startup founder, developer, or investor, there's something for you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fas fa-ticket-alt"></i> Is NIW2025 free to attend?
+          <span class="toggle-icon">➕</span>
+        </button>
+        <div class="faq-answer">
+          <p>🎟️ Some sessions and workshops are <strong>free</strong>, while premium events may require registration or tickets. Stay updated on our website.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fas fa-laptop-code"></i> How can I participate in the hackathon?
+          <span class="toggle-icon">➕</span>
+        </button>
+        <div class="faq-answer">
+          <p>💻 You can register for the <strong>NIW2025 Hackathon</strong> on our official website. Spots are limited, so be sure to sign up early!</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
-        <!-- Embedded Google Map -->
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.081383947896!2d8.5204533!3d8.491468099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4e08920ff907af51%3A0x77af10b6c8981097!2s02%20Innovations%20Lab!5e0!3m2!1sen!2sng!4v1742295878330!5m2!1sen!2sng" width="950" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+<!-- Embedded Google Map -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.081383947896!2d8.5204533!3d8.491468099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4e08920ff907af51%3A0x77af10b6c8981097!2s02%20Innovations%20Lab!5e0!3m2!1sen!2sng!4v1742295878330!5m2!1sen!2sng"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
+  </div>
 </section>
 
 
-    <!-- Footer -->
+
+
+   <!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
         <!-- Logo & About -->
@@ -564,7 +520,8 @@
     <div class="footer-bottom">
         <p>&copy; 2025 NIW2025. All rights reserved.</p>
     </div>
-</footer>
+</footer>   
+
     
 </body>
 </html>

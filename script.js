@@ -1,21 +1,24 @@
+// Toggle header
 
-function toggleMenu() {
-    const nav = document.querySelector('.nav-links');
-    const burger = document.querySelector('.burger');
-    
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-}
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
-
-
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('show');
+  });
 
 
 
-// countdown timer
 
 
- // Countdown Timer Script
+
+
+
+
+
+
+/// Countdown Timer Script
  function startCountdown(targetDate) {
     function updateTimer() {
         const now = new Date().getTime();
@@ -47,58 +50,52 @@ const eventDate = new Date(2025, 6, 15, 9, 0, 0).getTime(); // July 15, 2025, 9:
 startCountdown(eventDate);
 
 
+// COMMUNITY COUNTUP
 
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // Lower = slower
 
-
-
-
-// FAQ LOGIC
-
-
-document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        faqItem.classList.toggle('active');
-    });
-});
-
-
-
-
-// COMMUNITY COUNTING NUMBERS
-
-function startCounter() {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 20; 
-
+  const animateCounters = () => {
     counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            let count = +counter.innerText.replace('+', ''); 
-            const increment = Math.ceil(target / speed);
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
 
-            if (count < target) {
-                counter.innerText = count + increment + '+';
-                setTimeout(updateCount, 200); 
-            } else {
-                counter.innerText = target + '+'; 
-            }
-        };
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 60); // Slow pace
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
 
-        updateCount();
+      updateCount();
     });
-}
+  };
 
-// Trigger only when the section is in view
-function handleScroll() {
-    const statsSection = document.querySelector('.impact-stats');
-    const sectionPos = statsSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight / 1.2;
-
-    if (sectionPos < screenPos) {
-        startCounter();
-        window.removeEventListener('scroll', handleScroll); // Prevents re-running
+  // Animate on scroll into view
+  const section = document.querySelector('#community');
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      animateCounters();
+      observer.disconnect(); // Only run once
     }
-}
+  }, { threshold: 0.4 });
 
-window.addEventListener('scroll', handleScroll);
+  observer.observe(section);
+
+
+
+//   FAQ SECTION
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const openItem = document.querySelector('.faq-item.active');
+      if (openItem && openItem !== item) {
+        openItem.classList.remove('active');
+      }
+      item.classList.toggle('active');
+    });
+  });
