@@ -449,21 +449,28 @@ body {
   }
 
   .countdown {
-    gap: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .time-box {
-    padding: 0.8rem 1.2rem;
-    min-width: 50px;
-    margin-top: -1.5rem;
+    flex: 0 0 auto;
+    min-width: 65px;
+    max-width: 80px;
+    padding: 0.3rem 0.1rem;
+    border-radius: 8px;
   }
 
   .time-box span:first-child {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
   }
 
   .label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 
