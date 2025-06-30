@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIW 2025 Registration</title>
+  <style>
+   /* Reset and Font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0d0d1f, #1f1f3f);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Container with Glassmorphism */
+.container {
+  max-width: 850px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: #00e0ff;
+  letter-spacing: 1.5px;
+}
+
+.header p {
+  color: #bbb;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 20px;
+  margin-top: 30px;
+  color: #00e0ff;
+  border-bottom: 1px solid #00e0ff;
+  padding-bottom: 5px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 18px;
+  color: #ccc;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+input, select, textarea {
+  margin-top: 6px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #00e0ff;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px #00e0ff60;
+}
+
+/* Submit Button */
+button {
+  margin-top: 30px;
+  padding: 14px;
+  background: linear-gradient(135deg, #00e0ff, #3a7bd5);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #00e0ff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 25px;
+  }
+}
+
+  </style>
+</head>
+<body>
+<!-- Container -->
+<div class="container">
+  <div class="header">
+    <h1>REGISTER FOR NIW 2025</h1>
+    <p>Join Nasarawa's biggest innovation festival breaking barriers, now more than ever</p>
+    <p><strong>March 15-21, 2025</strong> | Lafia, Nasarawa State | <strong>10,000+ Participants</strong></p>
+  </div>
+
+  <!-- Registration Form -->
+  <form id="registrationForm">
+    <div class="section-title">Personal Information</div>
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <div class="section-title">Professional Information</div>
+    <label for="occupation">Occupation</label>
+    <input type="text" id="occupation" name="occupation" required />
+
+    <label for="organization">Organization</label>
+    <input type="text" id="organization" name="organization" />
+
+    <label for="experience">Years of Experience</label>
+    <select id="experience" name="experience">
+      <option value="0-1">0-1</option>
+      <option value="2-4">2-4</option>
+      <option value="5+">5+</option>
+    </select>
+
+    <div class="section-title">Additional Information</div>
+    <label for="interests">What are you hoping to gain from NIW 2025?</label>
+    <textarea id="interests" name="interests" rows="4"></textarea>
+
+    <button type="submit">Complete Registration</button>
+  </form>
+
+  <div class="footer">
+    By registering, you'll receive a confirmation email with calendar invite and event details.
+  </div>
+</div>
+
+<!-- Supabase JS (v2.39.5 ESM) -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/+esm';
+
+  // Step 1: Initialize Supabase
+  const SUPABASE_URL = 'https://avzgflszupjlqhsmlmjt.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2emdmbHN6dXBqbHFoc21sbWp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEyODE4NDUsImV4cCI6MjA2Njg1Nzg0NX0.1LTSrVuFf-a0K9zx_Ak9hCNFS8jiiFH4KV5WVd7uBiU';
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // Step 2: Handle Form Submission
+  const form = document.getElementById('registrationForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullname = form.fullname.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const occupation = form.occupation.value;
+    const organization = form.organization.value;
+    const experience = form.experience.value;
+    const interests = form.interests.value;
+
+    // Step 3: Insert data into Supabase
+    const { data, error } = await supabase
+      .from('Registration') 
+      .insert([{
+        fullname,
+        email,
+        phone,
+        occupation,
+        organization,
+        experience,
+        interests
+      }]);
+
+    // Step 4: Feedback
+    if (error) {
+      alert('❌ Registration Failed: ' + error.message);
+    } else {
+      alert('✅ Registration Successful! We wil send you your detials soon.');
+      form.reset();
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
