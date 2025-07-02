@@ -1,4 +1,12 @@
 ---
 deployment:
   tasks:
-    - /bin/git pull
+    - export DEPLOYPATH=/home/sknbwelv/niw.02innovationslab.com/
+    - /bin/cp -R * $DEPLOYPATH
+    # If script.js is the only file you are managing and it's always at the root of your repo, you can be more specific:
+    # - /bin/cp script.js $DEPLOYPATH/script.js
+
+    # Optional: If you have other directories or build steps, uncomment and modify:
+    # - /bin/rm -rf $DEPLOYPATH/old_build_folder # Example cleanup
+    # - /usr/bin/npm install # If you have a Node.js project and npm is available
+    # - /usr/bin/npm run build # If you have a build step (e.g., for React, Vue)
