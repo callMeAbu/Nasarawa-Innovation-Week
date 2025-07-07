@@ -46,44 +46,82 @@
 }
 
 // Set Event Date: (Year, Month [0=Jan], Day, Hour, Minute, Second)
-const eventDate = new Date(2025, 6, 15, 9, 0, 0).getTime(); // July 15, 2025, 9:00 AM
+const eventDate = new Date(2025, 9, 15, 9, 0, 0).getTime(); // September 15, 2025, 9:00 AM
 startCountdown(eventDate);
 
 
-// COMMUNITY COUNTUP
-
+/// Mobile-optimized counter animation
+function initCounters() {
   const counters = document.querySelectorAll('.counter');
-  const speed = 200; // Lower = slower
+  let animationStarted = false;
 
   const animateCounters = () => {
+    if (animationStarted) return;
+    animationStarted = true;
+    
     counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = Math.ceil(target / speed);
-
-        if (count < target) {
-          counter.innerText = count + increment;
-          setTimeout(updateCount, 60); // Slow pace
+      const target = +counter.getAttribute('data-target');
+      const duration = 1000; // 2 seconds total animation
+      let start = null;
+      
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        const value = Math.floor(percentage * target);
+        
+        counter.textContent = value.toLocaleString();
+        
+        if (percentage < 1) {
+          window.requestAnimationFrame(step);
         } else {
-          counter.innerText = target.toLocaleString();
+          counter.textContent = target.toLocaleString();
         }
       };
-
-      updateCount();
+      
+      window.requestAnimationFrame(step);
     });
   };
 
-  // Animate on scroll into view
-  const section = document.querySelector('#community');
-  const observer = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      animateCounters();
-      observer.disconnect(); // Only run once
-    }
-  }, { threshold: 0.4 });
+  // Mobile-friendly intersection observer
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 // Lower threshold for mobile
+  };
 
-  observer.observe(section);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Small delay to ensure mobile browsers are ready
+        setTimeout(animateCounters, 300);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const section = document.querySelector('#community');
+  if (section) {
+    observer.observe(section);
+  }
+
+  // Fallback for older mobile browsers
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (isMobile) {
+    setTimeout(() => {
+      if (!animationStarted) {
+        animateCounters();
+      }
+    }, 1000);
+  }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCounters);
+} else {
+  initCounters();
+}
 
 
 

@@ -600,7 +600,7 @@ body {
     margin: 0 auto;
   }
   .about-image {
-    margin-bottom: 1rem;
+    margin-bottom: -5rem;
   }
   .about-text h2 {
     font-size: 2rem;
@@ -750,6 +750,7 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: -6rem;
 }
 
 .cta-button:hover {
@@ -760,9 +761,6 @@ body {
 
 @media (max-width: 768px) {
 
-  .schedule-container h2 {
-  margin-top: 3rem;
-}
   .schedule-rows {
     gap: 1.2rem;
   }
@@ -781,8 +779,8 @@ body {
     margin-bottom: 1.2rem;
   }
   .schedule-item {
-    width: 45vw;
-    max-width: 150px;
+    width: 75vw;
+    max-width: 350px;
     height: 150px;
     margin: 0.6rem;
   }
@@ -792,7 +790,7 @@ body {
     border-radius: 8px;
   }
   .schedule-item-front h3 {
-    font-size: 0.85rem;
+    font-size: 1.85rem;
   }
   .schedule-item-back {
     font-size: 0.75rem;
@@ -929,7 +927,7 @@ body {
     margin-bottom: 1rem;
   }
   .speaker-card img {
-    height: 100px;
+    height: 145px;
     border-radius: 6px;
     margin-bottom: 8px;
   }
@@ -943,6 +941,7 @@ body {
   }
   .speakers-grid {
     gap: 14px;
+    
   }
 }
 /* ENDING OF SPEAKER SESSION STYLING */
