@@ -10,12 +10,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #0d0d1f, #1f1f3f);
-  color: #fff;
+  background: #ffff;
+  color: #ffffff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ body {
 .container {
   max-width: 850px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: #001F3F;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   padding: 40px;
@@ -42,13 +42,18 @@ body {
 }
 
 .header h1 {
-  font-size: 32px;
-  color: #00e0ff;
-  letter-spacing: 1.5px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #F5C518;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
 }
 
 .header p {
-  color: #bbb;
+  color: #ffffff;
   margin-top: 10px;
   line-height: 1.6;
 }
@@ -57,8 +62,8 @@ body {
 .section-title {
   font-size: 20px;
   margin-top: 30px;
-  color: #00e0ff;
-  border-bottom: 1px solid #00e0ff;
+  color: #ffffff;
+  border-bottom: 1px solid #F5C518;
   padding-bottom: 5px;
 }
 
@@ -70,7 +75,7 @@ form {
 
 label {
   margin-top: 18px;
-  color: #ccc;
+  color: #8b8a8a;
   font-weight: 500;
   font-size: 15px;
 }
@@ -78,7 +83,7 @@ label {
 input, select, textarea {
   margin-top: 6px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(255, 255, 255);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   border-radius: 8px;
@@ -88,17 +93,17 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: #00e0ff;
+  border-color: #F5C518;
   background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 10px #00e0ff60;
+  box-shadow: 0 0 10px #001F3F;
 }
 
 /* Submit Button */
 button {
   margin-top: 30px;
   padding: 14px;
-  background: linear-gradient(135deg, #00e0ff, #3a7bd5);
-  color: #fff;
+  background-color: #F5C518; /* Gold */
+  color: #001F3F; /* Navy */
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -108,7 +113,33 @@ button {
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 15px #00e0ff;
+  box-shadow: 0 0 15px #F5C518;
+  background-color: #FFFFFF;
+  color: #001F3F;
+}
+
+
+.home-link {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background-color: #F5C518; /* Gold */
+  color: #001F3F; /* Navy */
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  width: fit-content;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+}
+
+.home-link:hover {
+ transform: translateY(-2px);
+  box-shadow: 0 0 15px #F5C518;
+  background-color: #FFFFFF;
+  color: #001F3F;
 }
 
 /* Footer */
@@ -149,8 +180,8 @@ button:hover {
 <div class="container">
   <div class="header">
     <h1>REGISTER FOR NIW 2025</h1>
-    <p>Join Nasarawa's biggest innovation festival breaking barriers, now more than ever</p>
-    <p><strong>March 15-21, 2025</strong> | Lafia, Nasarawa State | <strong>10,000+ Participants</strong></p>
+    <p>Join Nasarawa's biggest innovation festival breaking barriers, now more than ever.</p>
+    <p><strong>September 1st, 2025</strong> | Lafia, Nasarawa State | We expecting <strong>10,000+ Participants.</strong></p>
   </div>
 
   <!-- Registration Form -->
@@ -184,6 +215,7 @@ button:hover {
     <textarea id="interests" name="interests" rows="4"></textarea>
 
     <button type="submit">Complete Registration</button>
+    <a href="/index.html" class="home-link">Home</a>
   </form>
 
   <div class="footer">
