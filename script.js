@@ -46,7 +46,7 @@
 }
 
 // Set Event Date: (Year, Month [0=Jan], Day, Hour, Minute, Second)
-const eventDate = new Date(2025, 9, 15, 9, 0, 0).getTime(); // September 15, 2025, 9:00 AM
+const eventDate = new Date(2025, 9, 1, 9, 0, 0).getTime(); // September 1, 2025, 9:00 AM
 startCountdown(eventDate);
 
 
